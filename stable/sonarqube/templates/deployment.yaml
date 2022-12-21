@@ -40,7 +40,7 @@ spec:
       {{- end }}
       initContainers:
         - name: chmod-volume-mounts
-          image: busybox:1.31
+          image: {{ default "busybox:1.31" .Values.plugins.initSysctlContainerImage }}
           command:
             - "sh"
             - "-c"
